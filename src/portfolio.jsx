@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Sun, Moon, FileText, ExternalLink, Code, Server, Cloud, Settings } from "lucide-react";
+import { FileText, ExternalLink, Code, Server, Cloud, Settings } from "lucide-react";
 
 // Custom SVG Icons
 const GithubIcon = () => (
@@ -39,16 +39,18 @@ export default function Portfolio() {
       tags: ["Kubernetes", "GKE", "Microservices"]
     },
     { 
-      title: "Infrastructure as Code", 
-      description: "Provisioned cloud resources using Terraform and Ansible for reproducible environments.",
-      icon: <Cloud className="w-6 h-6" />,
-      tags: ["Terraform", "Ansible", "AWS"]
+      title: "AWS Serverless Website Deployment", 
+      description: "Deployed a website with a live counter serverlessly using Lambda and S3",
+      icon: <Code className="w-6 h-6" />,
+      tags: ["AWS S3", "Dynamodb", "AWS lambda", "Python(Boto3)", "Terraform", "Github Actions"],
+      link: "https://github.com/Arijit9721/aws-serverless-terraform-cicd-deployment.git"
     },
     { 
-      title: "Monitoring & Alerts", 
-      description: "Implemented Prometheus and Grafana dashboards for comprehensive system health monitoring.",
+      title: "Production Ready Kubernetes Cluster", 
+      description: "Deployed a production-ready EKS cluster with high availability using Terraform",
       icon: <Code className="w-6 h-6" />,
-      tags: ["Prometheus", "Grafana", "Monitoring"]
+      tags: ["Kubernetes", "AWS EKS", "Python", "Terraform"],
+      link: "https://github.com/Arijit9721/Production-Ready-EKS-Cluster-Using-Terraform.git"
     },
   ];
 
@@ -85,15 +87,15 @@ export default function Portfolio() {
   // }, []);
 
   const achievements = [
-    { text: "Top 6.9% on LeetCode 2024", icon: "🏆" },
-    { text: "Google Get Certified Program - Stage 2", icon: "🎓" },
-    { text: "Completed Kubernetes Security Fundamentals", icon: "🔒" },
-    { text: "Built scalable cloud infrastructure for high-traffic apps", icon: "☁️" }
+    { text: "AWS Emerging Talent Community Member", icon: "🏆" },
+    { text: "GCP Certified Associate Cloud Engineer", icon: "🎓" },
+    { text: "Completed Kodekloud 100 Days of DevOps Challenge", icon: "☁️" },
+    { text: "KodeKloud Certified Chaos Engineer", icon: "🔒" }
   ];
 
   const skills = [
     "Docker", "Kubernetes", "AWS", "Jenkins", "Terraform", 
-    "Ansible", "Prometheus", "Grafana", "Python", "Go"
+    "Ansible", "Prometheus", "Grafana", "Python", "GitHub Actions"
   ];
 
   return (
@@ -112,7 +114,7 @@ export default function Portfolio() {
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+            className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
           >
             Arijit Das
           </motion.div>
@@ -125,32 +127,15 @@ export default function Portfolio() {
             </div>
             
             <div className="flex items-center space-x-3">
-              <a href="#" className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+              <a href="https://github.com/Arijit9721" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-100">
                 <GithubIcon />
               </a>
-              <a href="#" className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+              <a href="https://www.linkedin.com/in/arijitdas97/" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-100">
                 <LinkedinIcon />
               </a>
-              <a href="#" className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+              <a href="#" className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-100">
                 <FileText className="w-5 h-5" />
               </a>
-              
-              <button
-                onClick={() => setDarkMode(!darkMode)}
-                className={`p-3 rounded-full transition-all duration-300 ${
-                  darkMode 
-                    ? 'bg-yellow-500/20 text-yellow-400 hover:bg-yellow-500/30' 
-                    : 'bg-slate-200 text-slate-600 hover:bg-slate-300'
-                }`}
-              >
-                <motion.div
-                  initial={false}
-                  animate={{ rotate: darkMode ? 180 : 0 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  {darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-                </motion.div>
-              </button>
             </div>
           </div>
         </div>
@@ -184,20 +169,20 @@ export default function Portfolio() {
             </motion.p>
             
             <motion.div 
-              className="flex flex-wrap justify-center gap-4 text-lg"
+              className="flex flex-wrap justify-center gap-3 md:gap-4 text-sm md:text-lg"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.8 }}
             >
-              <div className="flex items-center space-x-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20">
+              <div className="flex items-center space-x-2 px-3 md:px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20">
                 <span className="text-blue-500">⚡</span>
                 <span className="font-medium">Zero-Downtime Deployments</span>
               </div>
-              <div className="flex items-center space-x-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20">
+              <div className="flex items-center space-x-2 px-3 md:px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20">
                 <span className="text-green-500">🛡️</span>
                 <span className="font-medium">Security-First Architecture</span>
               </div>
-              <div className="flex items-center space-x-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20">
+              <div className="flex items-center space-x-2 px-3 md:px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20">
                 <span className="text-purple-500">📈</span>
                 <span className="font-medium">Scalable Cloud Solutions</span>
               </div>
@@ -219,9 +204,9 @@ export default function Portfolio() {
                 key={skill}
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.1 * index, duration: 0.5 }}
+                transition={{ duration: 0.1 }}
                 whileHover={{ scale: 1.05, y: -2 }}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 cursor-pointer ${
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-100 cursor-pointer ${
                   darkMode 
                     ? 'bg-gray-800 text-blue-400 border border-blue-500/30 hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:text-white hover:border-transparent hover:shadow-lg hover:shadow-blue-500/30' 
                     : 'bg-blue-100 text-blue-800 border border-blue-200 hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:text-white hover:border-transparent hover:shadow-lg hover:shadow-blue-400/40'
@@ -233,6 +218,7 @@ export default function Portfolio() {
           </div>
         </motion.section>
 
+
         {/* About */}
         <motion.section 
           id="about"
@@ -242,14 +228,14 @@ export default function Portfolio() {
           className="mb-20"
         >
           <h2 className="text-3xl font-bold mb-8">About Me</h2>
-          <div className={`p-8 rounded-2xl shadow-lg transition-all duration-300 cursor-pointer group ${
+          <div className={`p-8 md:p-12 rounded-2xl shadow-lg transition-all duration-300 cursor-pointer group h-full ${
             darkMode 
               ? 'bg-gray-800/50 border border-gray-700/50 hover:bg-gray-800/70 hover:border-gray-600/70 hover:shadow-xl hover:shadow-blue-500/10' 
               : 'bg-white/80 border border-gray-200/50 shadow-xl hover:shadow-2xl hover:border-gray-300/70 hover:bg-white'
           }`}>
             <motion.p 
               whileHover={{ scale: 1.01 }}
-              className="text-lg leading-relaxed max-w-4xl group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+              className="text-base md:text-lg leading-loose md:leading-loose text-justify w-full group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
               I am a passionate DevOps Engineer specializing in cloud-native solutions, CI/CD pipelines, and infrastructure automation. 
               I thrive on optimizing systems, enhancing deployment processes, and building resilient, scalable environments that empower 
               teams to deliver exceptional software experiences. My expertise spans containerization, orchestration, monitoring, and 
@@ -257,6 +243,7 @@ export default function Portfolio() {
             </motion.p>
           </div>
         </motion.section>
+
 
         {/* Achievements */}
         <motion.section 
@@ -273,9 +260,9 @@ export default function Portfolio() {
                 key={index}
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.1 * index, duration: 0.6 }}
+                transition={{ duration: 0.1 }}
                 whileHover={{ scale: 1.05, y: -3 }}
-                className={`p-6 rounded-xl transition-all duration-300 cursor-pointer ${
+                className={`p-6 rounded-xl transition-all duration-100 cursor-pointer ${
                   darkMode 
                     ? 'bg-gradient-to-r from-gray-800 to-gray-700 border border-gray-600/50 hover:border-gray-500/70 hover:shadow-xl hover:shadow-blue-500/10' 
                     : 'bg-gradient-to-r from-white to-gray-50 border border-gray-200 shadow-lg hover:shadow-xl hover:border-gray-300'
@@ -297,7 +284,7 @@ export default function Portfolio() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 0.8 }}
         >
-          <h2 className="text-3xl font-bold mb-8">Featured Projects</h2>
+          <h2 className="text-3xl font-bold mb-8">Best Projects</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
             <AnimatePresence mode="popLayout">
               {projects.map((project, index) => (
@@ -307,28 +294,24 @@ export default function Portfolio() {
                   initial={{ opacity: 0, y: 20, scale: 0.95 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: -20, scale: 0.95 }}
-                  transition={{ 
-                    duration: 0.5,
-                    type: "spring",
-                    stiffness: 100,
-                    damping: 15
-                  }}
+                  transition={{ duration: 0.1 }}
                   whileHover={{ y: -5, scale: 1.02 }}
-                  className={`group p-6 rounded-2xl transition-all duration-300 cursor-pointer ${
+                  className={`group p-6 rounded-2xl transition-all duration-100 cursor-pointer ${
                     darkMode 
                       ? 'bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700/50 hover:border-blue-500/50 shadow-lg hover:shadow-blue-500/20' 
                       : 'bg-gradient-to-br from-white to-gray-50 border border-gray-200 hover:border-blue-300 shadow-lg hover:shadow-xl hover:shadow-blue-200/50'
                   }`}
+                  onClick={() => project.link && window.open(project.link, '_blank')}
                 >
                   <div className="flex items-center justify-between mb-4">
-                    <div className={`p-3 rounded-lg transition-colors duration-300 ${
+                    <div className={`p-3 rounded-lg transition-colors duration-100 ${
                       darkMode 
                         ? 'bg-blue-500/20 text-blue-400 group-hover:bg-blue-500/30' 
                         : 'bg-blue-100 text-blue-600 group-hover:bg-blue-200'
                     }`}>
                       {project.icon}
                     </div>
-                    <ExternalLink className={`w-5 h-5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
+                    <ExternalLink className={`w-5 h-5 opacity-0 group-hover:opacity-100 transition-opacity duration-100 ${
                       darkMode ? 'text-gray-400' : 'text-gray-500'
                     }`} />
                   </div>
@@ -370,13 +353,13 @@ export default function Portfolio() {
           transition={{ delay: 1.2, duration: 0.8 }}
           className="mt-20 text-center"
         >
-          <div className={`p-12 rounded-2xl transition-all duration-300 ${
+          <div className={`p-8 md:p-12 rounded-2xl transition-all duration-300 ${
             darkMode 
               ? 'bg-gradient-to-r from-gray-800 to-gray-700 border border-gray-600/50' 
               : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-2xl'
           }`}>
-            <h2 className="text-3xl font-bold mb-4">Ready to Optimize Your Infrastructure?</h2>
-            <p className="text-lg mb-8 opacity-90">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">Ready to Optimize Your Infrastructure?</h2>
+            <p className="text-base md:text-lg mb-8 opacity-90">
               Let's discuss how we can accelerate your deployments and build something amazing together.
             </p>
             <div className="flex flex-col items-center justify-center gap-4">
