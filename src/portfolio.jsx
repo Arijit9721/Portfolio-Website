@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FileText, ExternalLink, Code, Server, Cloud, Settings } from "lucide-react";
+import { link } from "framer-motion/client";
 
 // Custom SVG Icons
 const GithubIcon = () => (
@@ -27,16 +28,17 @@ export default function Portfolio() {
 
   const projectsData = [
     { 
-      title: "CI/CD Pipeline Automation", 
-      description: "Automated deployment pipeline using Jenkins and GitHub Actions with zero-downtime deployments.",
+      title: "Production-ready Devsecops Pipeline", 
+      description: "Engineered a production-ready DevSecOps pipeline using security best practices and GitOps Principles.",
       icon: <Settings className="w-6 h-6" />,
-      tags: ["Jenkins", "GitHub Actions", "Docker"]
+      tags: ["Jenkins", "Terraform", "Ansible", "Kubernetes", "Gitops", "Sonarqube"]
     },
     { 
-      title: "Kubernetes Cluster Setup", 
-      description: "Deployed microservices on GKE with monitoring, autoscaling, and high availability.",
+      title: "End to End Monitoring Setup", 
+      description: "Deployed the entire Prometheus Monitoring Stack with Slack Reporting Using Ansible and Terraform.",
       icon: <Server className="w-6 h-6" />,
-      tags: ["Kubernetes", "GKE", "Microservices"]
+      tags: ["Ansible", "Terraform", "AWS", "Slack", "Prometheus", "Grafana"],
+      link: "https://github.com/Arijit9721/End-To-End-Monitoring-Setup-With-Ansible.git"
     },
     { 
       title: "AWS Serverless Website Deployment", 
